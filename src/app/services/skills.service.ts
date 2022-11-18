@@ -11,7 +11,7 @@ export class SkillsService {
   constructor() {}
 
   /**
-   * this function returns the player's activities and skills
+   * This function returns the player's activities and skills
    * @param username - the player's username
    * @returns Observable
    */

@@ -11,7 +11,7 @@ export class QuestsService {
   constructor() {}
 
   /**
-   * this function returns the player's quest progress
+   * This function returns the player's quest progress
    * @param username - the player's username
    * @returns Observable
    */
