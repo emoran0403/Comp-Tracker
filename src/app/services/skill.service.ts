@@ -4,16 +4,19 @@ import { from, Observable } from 'rxjs';
 
 @Injectable()
 export class SkillService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  apiURL: string = `https://secure.runescape.com/m=hiscore/index_lite.ws?player=`;
 
   /**
    * This function returns the player's activities and skills
    * @param username - the player's username
    * @returns Observable
    */
-  // getSkills(username: string): Observable<any> {
-  //   // return from(hiscores.getPlayer(username));
-  // }
+  getSkills(username: string): Observable<any> {
+    console.log(`${username} in skills service!`);
+    return this.http.get<any>(`${this.apiURL}${username}`);
+  }
 }
 
 let wow = {

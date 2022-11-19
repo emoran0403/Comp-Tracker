@@ -26,9 +26,9 @@ export class HeaderComponent implements OnInit {
    */
   lookUpUser(username: string) {
     //* call skills service
-    // this.skillService
-    //   .getSkills(username)
-    //   .subscribe((res) => (this.player = res));
+    this.skillService
+      .getSkills(username)
+      .subscribe((res) => (this.player = res));
     //* call quest service
     this.questService
       .getQuests(username)
