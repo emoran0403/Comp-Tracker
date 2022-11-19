@@ -7,17 +7,9 @@ export class JsonPlaceHolderService {
   constructor(private http: HttpClient) {}
 
   apiURL: string = 'https://jsonplaceholder.typicode.com/';
-  resources = {
-    posts: 'posts',
-    comments: 'comments',
-    albums: 'albums',
-    photos: 'photos',
-    todos: 'todos',
-    users: 'users',
-  };
 
-  getPosts(): Observable<any> {
-    console.log(`getting posts - log from jsonplaceholder service`);
-    return this.http.get<any>(`${this.apiURL}posts`);
+  getResource(resource: string): Observable<any> {
+    console.log(`getting ${resource} - log from jsonplaceholder service`);
+    return this.http.get<any>(`${this.apiURL}${resource}`);
   }
 }

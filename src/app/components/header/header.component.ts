@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   quests!: any;
 
   // for json angular practice
+  // app-button component iterates over this list, generating a button for each
   resources: string[] = [
     'posts',
     'comments',
@@ -22,6 +23,14 @@ export class HeaderComponent implements OnInit {
     'todos',
     'users',
   ];
+
+  posts: any;
+  comments: any;
+  albums: any;
+  photos: any;
+  todos: any;
+  users: any;
+  data: any;
 
   // pass in the services to make them available to the class
   constructor(
@@ -51,5 +60,13 @@ export class HeaderComponent implements OnInit {
     // console.log(`quests: ${this.quests}`);
     //* bundle results into an object
     //* call storage service to store progress object
+  }
+
+  getResource(resource: string) {
+    console.log(resource);
+    this.jsonPlaceHolder.getResource(resource).subscribe((data) => {
+      this.data = data;
+      console.log(this.data);
+    });
   }
 }

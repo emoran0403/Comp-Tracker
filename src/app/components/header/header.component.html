@@ -8,5 +8,9 @@
     iterate over resources array (which are held in component.ts) and create an app-button component for each of them
     pass in text (which will be the button text)
    -->
-  <app-button *ngFor="let resource of resources" [text]="resource"></app-button>
+  <app-button
+    *ngFor="let resource of resources"
+    [text]="resource"
+    (btnClick)="getResource($event)"
+  ></app-button>
 </div>
