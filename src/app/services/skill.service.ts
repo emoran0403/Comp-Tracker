@@ -1,13 +1,9 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { from, Observable } from 'rxjs';
 
-import { hiscores } from 'runescape-api';
-import { Player } from 'runescape-api/lib/RuneScape';
-
-@Injectable({
-  providedIn: 'root',
-})
-export class SkillsService {
+@Injectable()
+export class SkillService {
   constructor() {}
 
   /**
@@ -15,9 +11,9 @@ export class SkillsService {
    * @param username - the player's username
    * @returns Observable
    */
-  getSkills(username: string): Observable<Player> {
-    return from(hiscores.getPlayer(username));
-  }
+  // getSkills(username: string): Observable<any> {
+  //   // return from(hiscores.getPlayer(username));
+  // }
 }
 
 let wow = {

@@ -1,22 +1,23 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { from, Observable } from 'rxjs';
-
-import { runemetrics } from 'runescape-api';
-import { Quest } from 'runescape-api/lib/RuneScape';
 
 @Injectable({
   providedIn: 'root',
 })
-export class QuestsService {
-  constructor() {}
+export class QuestService {
+  constructor(private http: HttpClient) {}
+
+  apiURL: string = `https://apps.runescape.com/runemetrics/quests?user=`;
 
   /**
    * This function returns the player's quest progress
    * @param username - the player's username
    * @returns Observable
    */
-  getQuests(username: string): Observable<Quest[]> {
-    return from(runemetrics.getQuests(username));
+  getQuests(username: string): Observable<any> {
+    console.log(`${username} in quest service!`);
+    return this.http.get<any>(`${this.apiURL}${username}`);
   }
 }
 
