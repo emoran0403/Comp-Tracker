@@ -20,6 +20,7 @@ import { PhotoComponent } from './components/json/photo/photo.component';
 import { AlbumComponent } from './components/json/album/album.component';
 import { CommentComponent } from './components/json/comment/comment.component';
 import { PostComponent } from './components/json/post/post.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { PostComponent } from './components/json/post/post.component';
     CommentComponent,
     PostComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, BrowserAnimationsModule],
   providers: [
     SkillService,
     QuestService,
