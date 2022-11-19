@@ -65,8 +65,8 @@ export class HeaderComponent implements OnInit {
   getResource(resource: string) {
     console.log(resource);
     this.jsonPlaceHolder.getResource(resource).subscribe((data) => {
-      this.data = data;
-      console.log(this.data);
+      this[resource as keyof this] = data;
+      console.log(this);
     });
   }
 }
