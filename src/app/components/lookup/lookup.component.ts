@@ -6,7 +6,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./lookup.component.css'],
 })
 export class LookupComponent implements OnInit {
+  // for rs app
   @Output() lookUpUser: EventEmitter<string> = new EventEmitter();
+  // for angular practice
+  @Output() btnClick = new EventEmitter();
 
   username!: string;
 
@@ -23,5 +26,10 @@ export class LookupComponent implements OnInit {
 
     // emit the event, and send the username
     this.lookUpUser.emit(this.username);
+  }
+
+  onClick($event: Event) {
+    // console.log('add');
+    this.btnClick.emit($event);
   }
 }

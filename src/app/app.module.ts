@@ -12,6 +12,7 @@ import { LookupComponent } from './components/lookup/lookup.component';
 import { SkillService } from './services/skill.service';
 import { QuestService } from './services/quest.service';
 import { StorageService } from './services/storage.service';
+import { JsonPlaceHolderService } from './services/json-place-holder.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,12 @@ import { StorageService } from './services/storage.service';
     LookupComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
-  providers: [SkillService, QuestService, StorageService],
+  providers: [
+    SkillService,
+    QuestService,
+    StorageService,
+    JsonPlaceHolderService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

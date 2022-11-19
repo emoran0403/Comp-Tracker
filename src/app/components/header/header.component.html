@@ -1,4 +1,7 @@
 <div>
   <h1>RS Comp Tracker</h1>
-  <app-lookup (lookUpUser)="lookUpUser($event)"></app-lookup>
+  <app-lookup
+    (lookUpUser)="lookUpUser($event)"
+    (btnClick)="getJson($event)"
+  ></app-lookup>
 </div>
