@@ -14,6 +14,12 @@ import { QuestService } from './services/quest.service';
 import { StorageService } from './services/storage.service';
 import { JsonPlaceHolderService } from './services/json-place-holder.service';
 import { ButtonComponent } from './components/button/button.component';
+import { UserComponent } from './components/json/user/user.component';
+import { TodoComponent } from './components/json/todo/todo.component';
+import { PhotoComponent } from './components/json/photo/photo.component';
+import { AlbumComponent } from './components/json/album/album.component';
+import { CommentComponent } from './components/json/comment/comment.component';
+import { PostComponent } from './components/json/post/post.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +28,12 @@ import { ButtonComponent } from './components/button/button.component';
     FooterComponent,
     LookupComponent,
     ButtonComponent,
+    UserComponent,
+    TodoComponent,
+    PhotoComponent,
+    AlbumComponent,
+    CommentComponent,
+    PostComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [

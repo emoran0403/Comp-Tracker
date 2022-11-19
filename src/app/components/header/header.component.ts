@@ -23,14 +23,13 @@ export class HeaderComponent implements OnInit {
     'todos',
     'users',
   ];
-
+  // for json angular practice
   posts: any;
   comments: any;
   albums: any;
   photos: any;
   todos: any;
   users: any;
-  data: any;
 
   // pass in the services to make them available to the class
   constructor(
