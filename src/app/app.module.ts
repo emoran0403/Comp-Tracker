@@ -13,6 +13,7 @@ import { SkillService } from './services/skill.service';
 import { QuestService } from './services/quest.service';
 import { StorageService } from './services/storage.service';
 import { JsonPlaceHolderService } from './services/json-place-holder.service';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { JsonPlaceHolderService } from './services/json-place-holder.service';
     HeaderComponent,
     FooterComponent,
     LookupComponent,
+    ButtonComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [

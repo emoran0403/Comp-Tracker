@@ -27,9 +27,4 @@ export class LookupComponent implements OnInit {
     // emit the event, and send the username
     this.lookUpUser.emit(this.username);
   }
-
-  onClick($event: Event) {
-    // console.log('add');
-    this.btnClick.emit($event);
-  }
 }

@@ -13,6 +13,16 @@ export class HeaderComponent implements OnInit {
   player!: any;
   quests!: any;
 
+  // for json angular practice
+  resources: string[] = [
+    'posts',
+    'comments',
+    'albums',
+    'photos',
+    'todos',
+    'users',
+  ];
+
   // pass in the services to make them available to the class
   constructor(
     private skillService: SkillService,
@@ -41,9 +51,5 @@ export class HeaderComponent implements OnInit {
     // console.log(`quests: ${this.quests}`);
     //* bundle results into an object
     //* call storage service to store progress object
-  }
-
-  getJson($event: Event) {
-    console.log(`json button chain working!`);
   }
 }

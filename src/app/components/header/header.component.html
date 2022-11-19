@@ -1,7 +1,12 @@
 <div>
   <h1>RS Comp Tracker</h1>
-  <app-lookup
-    (lookUpUser)="lookUpUser($event)"
-    (btnClick)="getJson($event)"
-  ></app-lookup>
+  <app-lookup (lookUpUser)="lookUpUser($event)"></app-lookup>
+</div>
+
+<div>
+  <!-- 
+    iterate over resources array (which are held in component.ts) and create an app-button component for each of them
+    pass in text (which will be the button text)
+   -->
+  <app-button *ngFor="let resource of resources" [text]="resource"></app-button>
 </div>
