@@ -4,6 +4,71 @@ import { QuestService } from 'src/app/services/quest.service';
 import { SkillService } from 'src/app/services/skill.service';
 import { StorageService } from 'src/app/services/storage.service';
 
+export interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+export interface Comment {
+  postId: number;
+  id: number;
+  name: string;
+  email: string;
+  body: string;
+}
+export interface Album {
+  userId: number;
+  id: number;
+  title: string;
+}
+export interface Photo {
+  albumId: number;
+  id: number;
+  title: string;
+  url: string;
+  thumbnailUrl: string;
+}
+export interface Todo {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+}
+export interface User {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  address: Address;
+  phone: string;
+  website: string;
+  company: Company;
+}
+export interface Address {
+  street: string;
+  suite: string;
+  city: string;
+  zipcode: string;
+  geo: Geo;
+}
+export interface Geo {
+  lat: string;
+  lng: string;
+}
+export interface Company {
+  name: string;
+  catchPhrase: string;
+  bs: string;
+}
+export type JsonPlaceHolderResources =
+  | 'posts'
+  | 'comments'
+  | 'albums'
+  | 'photos'
+  | 'todos'
+  | 'users';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -15,7 +80,7 @@ export class HeaderComponent implements OnInit {
 
   // for json angular practice
   // app-button component iterates over this list, generating a button for each
-  resources: string[] = [
+  resources: JsonPlaceHolderResources[] = [
     'posts',
     'comments',
     'albums',
@@ -24,12 +89,12 @@ export class HeaderComponent implements OnInit {
     'users',
   ];
   // for json angular practice
-  posts: any;
-  comments: any;
-  albums: any;
-  photos: any;
-  todos: any;
-  users: any;
+  posts: Post[] = [];
+  comments: Comment[] = [];
+  albums: Album[] = [];
+  photos: Photo[] = [];
+  todos: Todo[] = [];
+  users: User[] = [];
 
   // pass in the services to make them available to the class
   constructor(
@@ -61,10 +126,17 @@ export class HeaderComponent implements OnInit {
     //* call storage service to store progress object
   }
 
-  getResource(resource: string) {
+  getResource(resource: JsonPlaceHolderResources) {
     console.log(resource);
+
+    // return early if the resource was already fetched
+    if (this[resource].length) {
+      console.log('resource already fetched');
+      return;
+    }
+
     this.jsonPlaceHolder.getResource(resource).subscribe((data) => {
-      this[resource as keyof this] = data;
+      this[resource] = data;
       console.log(this);
     });
   }
