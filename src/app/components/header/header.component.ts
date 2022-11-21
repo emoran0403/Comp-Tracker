@@ -126,6 +126,11 @@ export class HeaderComponent implements OnInit {
     //* call storage service to store progress object
   }
 
+  /**
+   * This function fetches data from the jsonPlaceHolder API and returns an observable with that data
+   * @param resource the resource to fetch from jsonPlaceHolder
+   * @returns an observable
+   */
   getResource(resource: JsonPlaceHolderResources) {
     console.log(resource);
 

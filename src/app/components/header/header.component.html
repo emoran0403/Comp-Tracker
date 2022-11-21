@@ -1,7 +1,7 @@
-<div>
+<!-- <div>
   <h1>RS Comp Tracker</h1>
   <app-lookup (lookUpUser)="lookUpUser($event)"></app-lookup>
-</div>
+</div> -->
 
 <div>
   <!-- 
@@ -13,4 +13,17 @@
     [text]="resource"
     (btnClick)="getResource($event)"
   ></app-button>
+  <!-- conditionally display the div if we have users -->
+  <div *ngIf="users.length">
+    <!-- iterate over each user, passing in each user's data to the app-user template  -->
+    <app-user *ngFor="let user of users" [user]="user"></app-user>
+  </div>
 </div>
+
+<div *ngIf="false; then thenBlock; else elseBlock"></div>
+<ng-template #thenBlock>
+  <h1>wow</h1>
+</ng-template>
+<ng-template #elseBlock>
+  <h1>some skeleton component, instructions, or other message</h1>
+</ng-template>
