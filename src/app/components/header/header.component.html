@@ -35,3 +35,7 @@
 <ng-template #elseBlock>
   <h1>some skeleton component, instructions, or other message</h1>
 </ng-template>
+
+<div *ngIf="todos.length">
+  <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+</div>
