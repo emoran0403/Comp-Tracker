@@ -89,6 +89,7 @@ export class HeaderComponent implements OnInit {
     'users',
   ];
   // for json angular practice
+  // these hold data fetched from jsonplaceholder
   posts: Post[] = [];
   comments: Commennt[] = [];
   albums: Album[] = [];
@@ -96,6 +97,7 @@ export class HeaderComponent implements OnInit {
   todos: Todo[] = [];
   users: User[] = [];
 
+  // used to conditionally render components
   resourceToDisplay!: '' | JsonPlaceHolderResources;
 
   // pass in the services to make them available to the class
@@ -149,6 +151,11 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  /**
+   * Used to conditionally display components
+   * @param resource the name of the resource to display
+   * @returns a boolean value indicating whether the resource should be displayed
+   */
   conditionalDisplay(resource: JsonPlaceHolderResources) {
     return this.resourceToDisplay == resource;
   }

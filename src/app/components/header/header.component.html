@@ -21,6 +21,10 @@
 <ng-template #thenBlock>
   <app-post *ngFor="let post of posts" [post]="post"></app-post>
 </ng-template>
+<!-- 
+using the if/then logic here will cause the else block to always display when posts are not displayed
+this would get in the way since we're only showing one kind of resource at a time
+ -->
 <ng-template #elseBlock>
   <h1>some skeleton component, instructions, or other message</h1>
 </ng-template>
@@ -48,8 +52,12 @@
 <!-- conditionally display the div (and children elements) if we have users -->
 <div *ngIf="conditionalDisplay('users')">
   <!-- iterate over each user, passing in each user's data to the app-user template  -->
-  <app-user *ngFor="let user of users" [user]="user"></app-user>
+  <app-user
+    *ngFor="let user of users"
+    [user]="user"
+    style="width: 600px; height: 600px"
+  ></app-user>
   <!-- users is the designation for the data, user is a single element -->
   <!-- [user]="user" -->
-  <!-- [this is how we use the data internally within the component] = "this is the designation for the data at THIS level" -->
+  <!-- [this is how we reference the data internally within the component] = "this is the designation for the data at THIS level" -->
 </div>
