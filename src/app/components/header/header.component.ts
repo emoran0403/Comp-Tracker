@@ -96,6 +96,8 @@ export class HeaderComponent implements OnInit {
   todos: Todo[] = [];
   users: User[] = [];
 
+  resourceToDisplay!: '' | JsonPlaceHolderResources;
+
   // pass in the services to make them available to the class
   constructor(
     private skillService: SkillService,
@@ -133,6 +135,7 @@ export class HeaderComponent implements OnInit {
    */
   getResource(resource: JsonPlaceHolderResources) {
     console.log(resource);
+    this.resourceToDisplay = resource;
 
     // return early if the resource was already fetched
     if (this[resource].length) {
@@ -144,5 +147,9 @@ export class HeaderComponent implements OnInit {
       this[resource] = data;
       console.log(this);
     });
+  }
+
+  conditionalDisplay(resource: JsonPlaceHolderResources) {
+    return this.resourceToDisplay == resource;
   }
 }
