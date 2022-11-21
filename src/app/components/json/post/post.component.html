@@ -1,7 +1,18 @@
-<div>
+<!-- <div>
   <h1>{{ post.title }}</h1>
   <h3>Written by: {{ post.userId }}</h3>
   <div>
     <p>{{ post.body }}</p>
   </div>
-</div>
+</div> -->
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-subtitle>Written by: {{ post.userId }}</mat-card-subtitle>
+    <mat-card-title>{{ post.title }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ post.body }}</p>
+    <mat-divider></mat-divider>
+  </mat-card-content>
+</mat-card>
