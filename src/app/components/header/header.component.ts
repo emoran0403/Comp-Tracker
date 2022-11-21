@@ -10,7 +10,7 @@ export interface Post {
   title: string;
   body: string;
 }
-export interface Comment {
+export interface Commennt {
   postId: number;
   id: number;
   name: string;
@@ -90,7 +90,7 @@ export class HeaderComponent implements OnInit {
   ];
   // for json angular practice
   posts: Post[] = [];
-  comments: Comment[] = [];
+  comments: Commennt[] = [];
   albums: Album[] = [];
   photos: Photo[] = [];
   todos: Todo[] = [];
