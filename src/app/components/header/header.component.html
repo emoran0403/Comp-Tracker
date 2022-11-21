@@ -15,17 +15,6 @@
   ></app-button>
 </div>
 
-<!-- we want to hide displays of data if we do not yet have the data -->
-
-<!-- conditionally display the div (and children elements) if we have users -->
-<div *ngIf="users.length">
-  <!-- iterate over each user, passing in each user's data to the app-user template  -->
-  <app-user *ngFor="let user of users" [user]="user"></app-user>
-  <!-- users is the designation for the data, user is a single element -->
-  <!-- [user]="user" -->
-  <!-- [this is how we use the data internally within the component] = "this is the designation for the data at THIS level" -->
-</div>
-
 <!-- use if else logic to display something else if we don't yet have data -->
 
 <div *ngIf="posts.length; then thenBlock; else elseBlock"></div>
@@ -36,17 +25,31 @@
   <h1>some skeleton component, instructions, or other message</h1>
 </ng-template>
 
-<div *ngIf="todos.length">
-  <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+<div *ngIf="comments.length">
+  <app-comment
+    *ngFor="let comment of comments"
+    [comment]="comment"
+  ></app-comment>
+</div>
+
+<div *ngIf="albums.length">
+  <app-album *ngFor="let album of albums" [album]="album"></app-album>
 </div>
 
 <div *ngIf="photos.length">
   <app-photo *ngFor="let photo of photos" [photo]="photo"></app-photo>
 </div>
 
-<div *ngIf="comments.length">
-  <app-comment
-    *ngFor="let comment of comments"
-    [comment]="comment"
-  ></app-comment>
+<div *ngIf="todos.length">
+  <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+</div>
+<!-- we want to hide displays of data if we do not yet have the data -->
+
+<!-- conditionally display the div (and children elements) if we have users -->
+<div *ngIf="users.length">
+  <!-- iterate over each user, passing in each user's data to the app-user template  -->
+  <app-user *ngFor="let user of users" [user]="user"></app-user>
+  <!-- users is the designation for the data, user is a single element -->
+  <!-- [user]="user" -->
+  <!-- [this is how we use the data internally within the component] = "this is the designation for the data at THIS level" -->
 </div>
