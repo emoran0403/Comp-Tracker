@@ -13,16 +13,24 @@
     [text]="resource"
     (btnClick)="getResource($event)"
   ></app-button>
-  <!-- conditionally display the div if we have users -->
-  <div *ngIf="users.length">
-    <!-- iterate over each user, passing in each user's data to the app-user template  -->
-    <app-user *ngFor="let user of users" [user]="user"></app-user>
-  </div>
 </div>
 
-<div *ngIf="false; then thenBlock; else elseBlock"></div>
+<!-- we want to hide displays of data if we do not yet have the data -->
+
+<!-- conditionally display the div (and children elements) if we have users -->
+<div *ngIf="users.length">
+  <!-- iterate over each user, passing in each user's data to the app-user template  -->
+  <app-user *ngFor="let user of users" [user]="user"></app-user>
+  <!-- users is the designation for the data, user is a single element -->
+  <!-- [user]="user" -->
+  <!-- [this is how we use the data internally within the component] = "this is the designation for the data at THIS level" -->
+</div>
+
+<!-- use if else logic to display something else if we don't yet have data -->
+
+<div *ngIf="posts.length; then thenBlock; else elseBlock"></div>
 <ng-template #thenBlock>
-  <h1>wow</h1>
+  <app-post *ngFor="let post of posts" [post]="post"></app-post>
 </ng-template>
 <ng-template #elseBlock>
   <h1>some skeleton component, instructions, or other message</h1>
