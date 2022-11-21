@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
   <div>
     <h1>Task #{{ todo.id }} | {{ todo.title }}</h1>
   </div>
@@ -8,4 +8,16 @@
   <div>
     <h3>Status: {{ todo.completed }}</h3>
   </div>
-</div>
+</div> -->
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{ todo.title }}</mat-card-title>
+    <mat-card-subtitle>Task #{{ todo.id }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Assigned by {{ todo.userId }}</p>
+    <p>Status: {{ todo.completed ? "Complete" : "Incomplete" }}</p>
+    <mat-divider></mat-divider>
+  </mat-card-content>
+</mat-card>
