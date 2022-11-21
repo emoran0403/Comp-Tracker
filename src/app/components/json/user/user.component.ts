@@ -12,4 +12,14 @@ export class UserComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  getRandomYears() {
+    const years = Math.floor(Math.random() * 10);
+
+    if (years === 1) {
+      return `${years} year`;
+    } else {
+      return `${years} years`;
+    }
+  }
 }

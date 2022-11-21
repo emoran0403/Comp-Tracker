@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
   <div>{{ user.name }}</div>
   <div>{{ user.username }}</div>
   <div>
@@ -12,4 +12,31 @@
       <div>{{ user.address.zipcode }}</div>
     </div>
   </div>
-</div>
+</div> -->
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{ user.name }}</mat-card-title>
+    <mat-card-subtitle>{{ user.company.name }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{ user.name }} likes to go by "{{ user.username }}", and has been working
+      at {{ user.company.name }} for {{ getRandomYears() }}.
+    </p>
+    <p>
+      {{ user.username }} runs {{ user.website }}, signs their emails with "{{
+        user.company.catchPhrase
+      }}" and has the phrase "{{ user.company.bs }}" on their business card.
+    </p>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <mat-card-subtitle>Contact</mat-card-subtitle>
+      <p>{{ user.email }} | {{ user.phone }}</p>
+      <p>{{ user.address.street }}</p>
+      <p>{{ user.address.suite }}</p>
+      <p>{{ user.address.city }}</p>
+      <p>Zipcode {{ user.address.zipcode }}</p>
+    </mat-card-content>
+  </mat-card-content>
+</mat-card>
