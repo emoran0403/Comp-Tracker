@@ -4,7 +4,7 @@ import { Photo } from '../../header/header.component';
 @Component({
   selector: 'app-photo',
   templateUrl: './photo.component.html',
-  styleUrls: ['./photo.component.css'],
+  styleUrls: ['./photo.component.css', '../../../app.component.css'],
 })
 export class PhotoComponent implements OnInit {
   @Input() photo!: Photo;

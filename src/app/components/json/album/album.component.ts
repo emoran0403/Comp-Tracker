@@ -4,7 +4,7 @@ import { Album } from '../../header/header.component';
 @Component({
   selector: 'app-album',
   templateUrl: './album.component.html',
-  styleUrls: ['./album.component.css'],
+  styleUrls: ['./album.component.css', '../../../app.component.css'],
 })
 export class AlbumComponent implements OnInit {
   @Input() album!: Album;
