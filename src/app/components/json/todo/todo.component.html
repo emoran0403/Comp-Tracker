@@ -9,15 +9,20 @@
     <h3>Status: {{ todo.completed }}</h3>
   </div>
 </div> -->
+<!-- text-decoration: line-through; -->
 
 <mat-card class="box">
   <mat-card-header>
-    <mat-card-title>{{ todo.title }}</mat-card-title>
+    <mat-card-title [ngClass]="applyStyle1(todo.completed)">{{
+      todo.title
+    }}</mat-card-title>
     <mat-card-subtitle>Task #{{ todo.id }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <p>Assigned by {{ todo.userId }}</p>
-    <p>Status: {{ todo.completed ? "Complete" : "Incomplete" }}</p>
+    <p [ngClass]="applyStyle2(todo.completed)">
+      Status: {{ todo.completed ? "Complete" : "Incomplete" }}
+    </p>
     <mat-divider></mat-divider>
   </mat-card-content>
 </mat-card>

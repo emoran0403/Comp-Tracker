@@ -1,0 +1,12 @@
+.style1 {
+  text-decoration: line-through;
+  font-weight: 100;
+}
+
+.complete {
+  color: chartreuse;
+}
+
+.incomplete {
+  color: red;
+}

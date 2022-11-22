@@ -12,4 +12,19 @@ export class TodoComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  applyStyle1(completed: boolean) {
+    if (completed) {
+      return 'style1 complete';
+    } else {
+      return 'incomplete';
+    }
+  }
+  applyStyle2(completed: boolean) {
+    if (completed) {
+      return 'complete';
+    } else {
+      return 'incomplete';
+    }
+  }
 }
