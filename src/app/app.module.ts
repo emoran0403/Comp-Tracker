@@ -9,6 +9,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 // Components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -50,6 +51,7 @@ import { JsonPlaceHolderService } from './services/json-place-holder.service';
     MatSlideToggleModule,
     MatCardModule,
     MatDividerModule,
+    MatProgressBarModule,
   ],
   providers: [
     SkillService,

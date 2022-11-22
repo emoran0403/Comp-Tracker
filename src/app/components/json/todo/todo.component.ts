@@ -27,4 +27,12 @@ export class TodoComponent implements OnInit {
       return 'incomplete';
     }
   }
+
+  getProgress(completed: boolean) {
+    if (completed) {
+      return 100;
+    } else {
+      return Math.random() * 100;
+    }
+  }
 }

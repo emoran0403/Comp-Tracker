@@ -23,6 +23,12 @@
     <p [ngClass]="applyStyle2(todo.completed)">
       Status: {{ todo.completed ? "Complete" : "Incomplete" }}
     </p>
-    <mat-divider></mat-divider>
+    <mat-progress-bar
+      class="my"
+      mode="determinate"
+      value="{{ getProgress(todo.completed) }}"
+    ></mat-progress-bar>
   </mat-card-content>
 </mat-card>
+
+<!-- what is making the progress bars update their value when todo button is clicked -->
