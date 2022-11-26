@@ -1,30 +1,14 @@
 // /routes/api/api_index.ts
 
-import * as express from "express";
+import * as express from 'express';
 
-import usersRouter from "./userRoutes";
-import blogRouter from "./blogRoutes";
-import contactRouter from "./contactRoutes";
-import donateRouter from "./donateRoutes";
-import tagRouter from "./tagRoutes";
-import { validateToken } from "../../Middleware";
+import skillRouter from './skillRoutes';
+import questRouter from './questRoutes';
 
 const apiRouter = express.Router();
 
 // Current Route is /api
-
-// apiRouter
-
-apiRouter.use("/users", validateToken, usersRouter);
-apiRouter.use("/blogs", validateToken, blogRouter);
-apiRouter.use("/contact", validateToken, contactRouter);
-apiRouter.use("/donate", donateRouter);
-apiRouter.use("/tags", validateToken, tagRouter);
+apiRouter.use('/skills', skillRouter);
+apiRouter.use('/quests', questRouter);
 
 export default apiRouter;
-
-// apiRouter
-//   .post("/blogs", validateToken, blogRouter)
-//   .put("/blogs", validateToken, blogRouter)
-//   .delete("/blogs", validateToken, blogRouter);
-// apiRouter.get("/blogs", blogRouter);
