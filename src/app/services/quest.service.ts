@@ -5,9 +5,6 @@ import { from, Observable } from 'rxjs';
 @Injectable()
 export class QuestService {
   constructor(private http: HttpClient) {}
-
-  apiURL: string = `https://apps.runescape.com/runemetrics/quests?user=`;
-
   /**
    * This function returns the player's quest progress
    * @param username - the player's username
@@ -15,7 +12,7 @@ export class QuestService {
    */
   getQuests(username: string): Observable<any> {
     console.log(`${username} in quest service!`);
-    return this.http.get<any>(`${this.apiURL}${username}`);
+    return this.http.get<any>(`/api/quests`);
   }
 }
 
